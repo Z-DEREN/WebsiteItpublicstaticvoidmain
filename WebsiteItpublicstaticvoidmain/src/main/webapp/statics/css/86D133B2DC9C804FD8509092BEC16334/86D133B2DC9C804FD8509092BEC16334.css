@@ -1,0 +1,42 @@
+.zCDF8BFD83B8CA99B23AEB910138CC466 {
+	width: 100%;
+	height: 30px;
+	margin: 0 0 20px 0;
+	border: 1px solid black;
+}
+
+.zC16548428D69EE851C88DEC4D81F6C5E {
+	width: 5%;
+	height: 100%;
+	margin: 10px;
+	float: right;
+	border: 1px solid black;
+}
+
+.zD88C478F1B226D6D37BD48509331348B, .z37513B5BAA4B8C9C11005D41050BBC4C,
+	.z60CCEA343D97E92EF0A45E47DF1F1228 {
+	display: inline-block;
+	margin: 10px;
+	border: 1px solid black;
+}
+
+.zD88C478F1B226D6D37BD48509331348B {
+	display: inline-block;
+	width: 20%;
+	height: 100px;
+	color: #cdcdcd;
+}
+
+.z37513B5BAA4B8C9C11005D41050BBC4C {
+	display: inline-block;
+	width: 48%;
+	height: 100px;
+	color: #cdcdcd;
+}
+
+.z60CCEA343D97E92EF0A45E47DF1F1228 {
+	display: inline-block;
+	width: 18%;
+	height: 100px;
+	color: #cdcdcd;
+}

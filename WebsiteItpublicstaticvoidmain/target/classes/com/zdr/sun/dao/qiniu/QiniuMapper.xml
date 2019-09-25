@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zdr.sun.dao.qiniu.QiniuMapper">
+
+	<select id="addniufile" resultType="qiniuyun">
+		INSERT INTO
+		filesystem(`key`,
+		`hash`,
+		fsize,
+		mimeType,
+		putTime,
+		endUser,
+		`type`,
+		times,
+		`local`,
+		filename,
+		suffix)
+		VALUES(
+		#{KEY},#{HASH},#{fsize},#{mimeType},#{putTime},#{endUser},#{TYPE},#{times},#{LOCAL},#{filename},#{suffix}
+		)
+
+	</select>
+
+</mapper>

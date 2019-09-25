@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zdr.sun.dao.cangku.CangkuMapper">
+
+	<select id="selectpan" resultType="Cangkupan">
+		select
+		pan,
+		newid,
+		type,
+		panName,
+		tiqu,
+		mima,
+		time
+		from cangku_pan
+		limit 0,10
+	</select>
+
+	<!-- 删除无用数据 -->
+	<delete id="delelaji" parameterType="Integer">
+		delete from cangku_pan
+		where
+		pan not like '%pan%'
+		or
+		pan not like '%baidu%'
+	</delete>
+
+	<!-- 根据类型查询最小的数据 -->
+	<select id="seleminid" resultType="Cangkupan">
+		SELECT
+		pan,newid,TYPE,tiqu,mima,TIME FROM cangku_pan a
+		WHERE
+		newid=(SELECT
+		MIN(newid) FROM cangku_pan WHERE state = '1' AND TYPE = #{type}) 
+	</select>
+
+	<!-- -->
+
+	<delete id="deleminid" parameterType="Integer">
+		delete from cangku_pan
+		where newid in (
+		select t.newid from (
+		select MIN(newid) as newid from
+		cangku_pan
+		) t
+		)
+	</delete>
+
+	<update id="updateminid" parameterType="string">
+		update cangku_pan
+		set
+		state = '-1'
+		where newid = #{newid}
+	</update>
+
+	<select id="Alltype" resultType="string">
+		SELECT DISTINCT TYPE FROM `cangku_pan` WHERE state = 1
+	</select>
+
+
+
+
+
+</mapper>

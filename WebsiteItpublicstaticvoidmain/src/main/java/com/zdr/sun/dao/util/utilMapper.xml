@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zdr.sun.dao.util.utilMapper">
+	<!-- 验证表唯一id -->
+	<select id="tableID" parameterType="util" resultType="Integer">
+		select
+		COUNT(id) FROM ${table} where id = #{id}
+	</select>
+</mapper>

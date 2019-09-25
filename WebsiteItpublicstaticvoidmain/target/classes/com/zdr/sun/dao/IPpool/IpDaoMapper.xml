@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zdr.sun.dao.IPpool.IpDaoMapper">
+
+	<!-- 添加测试国内IP表(没有相应时间的计算) -->
+	<insert id="addtetsChinaIP" parameterType="Newips">
+		insert into
+		testchinaips(`ip`,`port`,`area` , `id`)
+		values(#{ip},#{port},#{area},#{id})
+	</insert>
+
+	<!-- 保存国内可用ip(计算访问时间) */ -->
+	<insert id="addgoodChinaIP" parameterType="Newips">
+		insert into
+		Formalchinaips(`ip`,`port`,`area`,`time`,`id`)
+		values(#{ip},#{port},#{area},#{time},#{id})
+	</insert>
+
+	<!-- 获取数据库所有国内测试ip -->
+	<select id="Listtestchips" resultType="Newips">
+		select id, ip , port ,
+		area from testchinaips
+	</select>
+
+	<!-- 删除国内测试未通过ip -->
+	<delete id="deltestChinaIP" parameterType="Newips">
+		delete from
+		testchinaips
+		where id = #{id}
+	</delete>
+
+	<!-- 删除国内测试ip -->
+	<delete id="delfromalChinaIP" parameterType="Newips">
+		delete from
+		formalchinaips
+		where id = #{id}
+	</delete>
+
+
+
+	<!-- 验证表唯一id -->
+	<select id="tableID" parameterType="Integer">
+		select COUNT(id) FROM
+		#{table} where id = #{id}
+	</select>
+
+
+	<!-- 获取数据库所有国内测试ip -->
+	<select id="Listformalchips" resultType="Newips">
+		select id, ip , port ,
+		area from formalchinaips
+	</select>
+
+
+
+
+</mapper>
