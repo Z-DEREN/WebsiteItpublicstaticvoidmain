@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 import com.zdr.sun.dao.Cardetails.CardDao;
 import com.zdr.sun.pojo.Kr36.news24th;
 import com.zdr.sun.tools.Cardetails.Cardetails;
-import com.zdr.sun.tools.EmalPop3.EmailType;
+//import com.zdr.sun.tools.EmalPop3.EmailType;
 import com.zdr.sun.tools.IPpool.AcquireIp;
 import com.zdr.sun.tools.Kr36.principal;
 import com.zdr.sun.tools.tool.Tool;
@@ -29,7 +29,7 @@ import com.zdr.sun.service.Timings.DatabaseService;
 @Lazy(false)
 public class TimerTask {
 
-	EmailType EmailType = new EmailType();
+//	EmailType EmailType = new EmailType();
 	news24th news24th = new news24th();
 	CardDao CardDao = new CardDao();
 	Tool Tool = new Tool();
@@ -119,13 +119,13 @@ public class TimerTask {
 		//
 		System.out.println(222 + " " + news24th.getNewsCount());
 		// 数量以及
-		try {
-			EmailType.Kr36Email(news24th.getNewsCount(), news24th.getListnews());
-			logger.info("36Kr邮件" + " 执行第" + testinti + "次 "); // info级别的信息
-		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			EmailType.Kr36Email(news24th.getNewsCount(), news24th.getListnews());
+//			logger.info("36Kr邮件" + " 执行第" + testinti + "次 "); // info级别的信息
+//		} catch (MessagingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 //		try {
 //			EmailType.Type("Email", null);

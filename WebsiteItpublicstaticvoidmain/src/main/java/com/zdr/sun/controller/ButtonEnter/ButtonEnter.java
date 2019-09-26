@@ -27,7 +27,7 @@ import com.zdr.sun.pojo.MD5.ZMD5;
 import com.zdr.sun.pojo.cangku.Cangkupan;
 import com.zdr.sun.service.cangku.CangkuService;
 import com.zdr.sun.tools.Cardetails.Cardetails;
-import com.zdr.sun.tools.EmalPop3.EmailType;
+//import com.zdr.sun.tools.EmalPop3.EmailType;
 import com.zdr.sun.tools.IPpool.AcquireIp;
 import com.zdr.sun.tools.Kr36.principal;
 import com.zdr.sun.tools.MD5.MD5;
@@ -171,31 +171,31 @@ public class ButtonEnter {
 
 //////////////////////////////////////////////////邮件功能	////////////////////////////////////////////////////////
 
-	private EmailType EmailType;// 邮件方法
-
-	@RequestMapping(value = "/C91F20D06AFF773E5A6F97E2077C1FB9", method = { RequestMethod.POST, RequestMethod.GET })
-	public String MBeanServerOne(HttpServletResponse response, HttpServletRequest request) {
-		logger.info("一号邮件按钮"); // info级别的信息
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("EtoMailAddress", "10554214@qq.com");
-		map.put("Etitle", "一号服务器出现状况");
-		map.put("Etext", "具体状况为:");
-		EmailType = new EmailType();
-		EmailType.Custom(map);
-		return "redirect:/ButtonEnter/Buttons";
-	}
-
-	@RequestMapping(value = "/A4B38AA025B0B7E3B28E3C8C64E4C8A7", method = { RequestMethod.POST, RequestMethod.GET })
-	public String MBeanServerThree(HttpServletResponse response, HttpServletRequest request) {
-		logger.info(" 点击三号服务器按钮...准备发送状况报告"); // info级别的信息
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("EtoMailAddress", "10554214@qq.com");
-		map.put("Etitle", "三号服务器出现状况");
-		map.put("Etext", "具体状况为:");
-		EmailType = new EmailType();
-		EmailType.Custom(map);
-		return "redirect:/ButtonEnter/Buttons";
-	}
+//	private EmailType EmailType;// 邮件方法
+//
+//	@RequestMapping(value = "/C91F20D06AFF773E5A6F97E2077C1FB9", method = { RequestMethod.POST, RequestMethod.GET })
+//	public String MBeanServerOne(HttpServletResponse response, HttpServletRequest request) {
+//		logger.info("一号邮件按钮"); // info级别的信息
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put("EtoMailAddress", "10554214@qq.com");
+//		map.put("Etitle", "一号服务器出现状况");
+//		map.put("Etext", "具体状况为:");
+//		EmailType = new EmailType();
+//		EmailType.Custom(map);
+//		return "redirect:/ButtonEnter/Buttons";
+//	}
+//
+//	@RequestMapping(value = "/A4B38AA025B0B7E3B28E3C8C64E4C8A7", method = { RequestMethod.POST, RequestMethod.GET })
+//	public String MBeanServerThree(HttpServletResponse response, HttpServletRequest request) {
+//		logger.info(" 点击三号服务器按钮...准备发送状况报告"); // info级别的信息
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put("EtoMailAddress", "10554214@qq.com");
+//		map.put("Etitle", "三号服务器出现状况");
+//		map.put("Etext", "具体状况为:");
+//		EmailType = new EmailType();
+//		EmailType.Custom(map);
+//		return "redirect:/ButtonEnter/Buttons";
+//	}
 
 //////////////////////////////////////////////////MD5	////////////////////////////////////////////////////////
 
