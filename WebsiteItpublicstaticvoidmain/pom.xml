@@ -83,7 +83,7 @@
 		<tomcat-websocket-api>9.0.14</tomcat-websocket-api>
 		<json-lib>2.4</json-lib>
 		<javaee-api>7.0</javaee-api>
-		<jsoup>1.11.3</jsoup>
+		<jsoup>1.14.2</jsoup>
 	</properties>
 
 	<dependencies>
